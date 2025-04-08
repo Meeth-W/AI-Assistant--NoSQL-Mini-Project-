@@ -103,6 +103,10 @@ The frontend runs at: `http://localhost:5173`
 - 🎨 Dark-themed, responsive design
 - 🚀 Fast, optimized, and interactive
 
+![image](https://github.com/user-attachments/assets/4a2b687f-ea9e-42b3-9143-67799ccba686)
+![image](https://github.com/user-attachments/assets/4e048e8c-859c-439f-9827-027c7a842974)
+![image](https://github.com/user-attachments/assets/5128d042-d6c1-446a-be65-d4431c0eb7ee)
+
 ---
 
 ## 🧪 Example Users
