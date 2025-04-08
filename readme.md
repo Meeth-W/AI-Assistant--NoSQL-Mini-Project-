@@ -18,7 +18,6 @@ An intelligent, full-stack chatbot web application that enables real-time conver
 - **MongoDB** – Lightweight database for storing chats
 
 ### Other:
-- **RESTful APIs** – Communication between frontend and backend
 - **AI Integration** – Handles AI chat responses (expandable to OpenAI, etc.)
 
 ---
@@ -50,7 +49,7 @@ project-root
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/your-username/ai-chatbot-app.git
+git clone https://github.com/Meeth-W/AI-Assistant--NoSQL-Mini-Project-.git
 cd ai-chatbot-app/backend
 ```
 
