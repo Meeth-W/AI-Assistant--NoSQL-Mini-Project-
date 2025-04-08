@@ -15,7 +15,7 @@ An intelligent, full-stack chatbot web application that enables real-time conver
 ### Backend:
 - **FastAPI** – High-performance async web framework
 - **Python** – Core logic, API routing
-- **SQLite** – Lightweight database for storing chats
+- **MongoDB** – Lightweight database for storing chats
 
 ### Other:
 - **RESTful APIs** – Communication between frontend and backend
@@ -33,13 +33,12 @@ project-root
 │       ├── About.jsx
 │       └── ...
 ├── backend/              # FastAPI backend
-│   ├── main.py
-│   ├── api/
-│   │   ├── v1/
-│   │   │   └── routes.py
-│   ├── handler.py
-│   └── database/
-│       └── messages.py
+│   ├── server.py
+│   ├── functions/
+│   │   ├── database.py
+│   │   ├── ollama.py
+│   └── venv/
+│       └── ...
 └── README.md
 ```
 
