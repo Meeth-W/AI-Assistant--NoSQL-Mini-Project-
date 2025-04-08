@@ -3,3 +3,4 @@ uvicorn
 langchain
 langchain-ollama
 ollama
+pymongo
