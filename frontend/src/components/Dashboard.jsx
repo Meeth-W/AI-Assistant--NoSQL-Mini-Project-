@@ -1,81 +1,53 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React from "react";
 
 const Dashboard = () => {
   return (
-    <div className="pt-16 min-h-screen bg-gray-900 text-white p-8">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-5xl mx-auto"
-      >
-        {/* Header */}
-        <motion.h1
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-5xl font-bold text-blue-400 mb-6"
-        >
-          Welcome to the Fraud Detection Banking System!
-        </motion.h1>
+    <div className="bg-gray-900 text-white min-h-screen w-full overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="max-w-6xl mx-auto text-center space-y-6 px-4 sm:px-6 lg:px-8 pt-16">
+        <h1 className="text-4xl md:text-6xl font-bold">
+          Your Private AI Assistant
+        </h1>
+        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+          An intelligent assistant powered by cutting-edge LLaMA models running locally via Ollama, with smart memory stored using MongoDB.
+        </p>
+        <div className="mt-6">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-2xl transition duration-300 shadow-lg">
+            Try it Now
+          </button>
+        </div>
+      </section>
 
-        {/* Bank Details Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-lg text-gray-300 mb-8"
-        >
-          <p className="mb-2">We are committed to ensuring the safety and security of all your financial transactions.</p>
-          <p>With advanced fraud detection algorithms, we help identify suspicious activities and prevent financial fraud.</p>
-          <p className="mt-4">Explore the system by selecting one of the following options to start managing the bank's data:</p>
-        </motion.div>
+      {/* About Section */}
+      <section className="max-w-6xl mx-auto mt-24 px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+        <div className="bg-gray-800 p-6 rounded-2xl shadow-md">
+          <h2 className="text-2xl font-semibold mb-3">LLaMA Models</h2>
+          <p className="text-gray-300">
+            LLaMA (Large Language Model Meta AI) is a powerful open-weight family of foundational models, optimized for performance and customization in private environments.
+          </p>
+        </div>
+        <div className="bg-gray-800 p-6 rounded-2xl shadow-md">
+          <h2 className="text-2xl font-semibold mb-3">Ollama Integration</h2>
+          <p className="text-gray-300">
+            Ollama allows you to run and manage LLaMA and other large language models locally with minimal setup — enabling fast, secure, and offline AI experiences.
+          </p>
+        </div>
+        <div className="bg-gray-800 p-6 rounded-2xl shadow-md">
+          <h2 className="text-2xl font-semibold mb-3">MongoDB Memory</h2>
+          <p className="text-gray-300">
+            User queries, session context, and assistant memory are persistently managed using MongoDB, ensuring data structure flexibility and performance at scale.
+          </p>
+        </div>
+      </section>
 
-        {/* Button Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.8 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8"
-        >
-          {/* Accounts Button */}
-          <Link to="/accounts">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              className="px-6 py-3 bg-blue-600 rounded-lg shadow-md text-lg font-semibold hover:bg-blue-700 transition duration-300"
-            >
-              View Accounts
-            </motion.button>
-          </Link>
-
-          {/* Users Button */}
-          <Link to="/users">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              className="px-6 py-3 bg-green-600 rounded-lg shadow-md text-lg font-semibold hover:bg-green-700 transition duration-300"
-            >
-              View Users
-            </motion.button>
-          </Link>
-
-          {/* Relations Button */}
-          <Link to="/relations">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              className="px-6 py-3 bg-purple-600 rounded-lg shadow-md text-lg font-semibold hover:bg-purple-700 transition duration-300"
-            >
-              View Relations
-            </motion.button>
-          </Link>
-        </motion.div>
-      </motion.div>
-
-      {/* Footer */}
-      <div className="text-center mt-16 text-gray-500">
-        <p>&copy; 2025 Fraud Detection System. All Rights Reserved.</p>
-      </div>
+      {/* CTA Section */}
+      <section className="text-center mt-24 pb-16 px-4">
+        <p className="text-gray-400">Secure. Private. Locally Tuned.</p>
+        <h2 className="text-3xl font-bold mt-2 mb-4">Ready to experience the future of AI?</h2>
+        <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-2xl transition duration-300 shadow-lg">
+          Launch Assistant
+        </button>
+      </section>
     </div>
   );
 };

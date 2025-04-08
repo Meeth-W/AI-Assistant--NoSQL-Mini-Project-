@@ -1,50 +1,52 @@
-import { Link } from "react-router-dom";
-import { FaHome, FaMoneyBillWave, FaSearch, FaSignInAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  
+  const username = localStorage.getItem("username");
+
+  const handleLogout = () => {
+    localStorage.removeItem("username");
+    localStorage.removeItem("password");
+    navigate("/login");
+  };
+
   return (
-    <motion.nav 
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, type: "spring" }}
-      className="bg-gray-900 text-white shadow-md fixed w-full z-50"
-    >
-      <div className="container mx-auto flex justify-between items-center p-5">
-        
-        {/* Logo */}
-        <Link 
-          to="/" 
-          className="text-2xl font-bold tracking-wide hover:text-blue-400 transition-all duration-300"
-        >
-          Fraud Detection
-        </Link>
+    <nav className="bg-gray-950 text-white shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* User info */}
+        <div className="text-lg font-semibold">
+          {username ? `Welcome, ${username}` : "AI Assistant"}
+        </div>
 
-        {/* Navigation Links */}
-        <div className="flex gap-6 text-lg">
-          <Link 
-            to="/" 
-            className="flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
-          >
-            <FaHome className="text-blue-300" /> Dashboard
-          </Link>
+        {/* Nav Links */}
+        <div className="space-x-6 hidden md:flex">
+          <Link to="/" className="hover:text-blue-400 transition">Home</Link>
+          <Link to="/about" className="hover:text-blue-400 transition">About</Link>
+          <Link to="/chat" className="hover:text-blue-400 transition">Chat</Link>
+        </div>
 
-          <Link 
-            to="/transactions" 
-            className="flex items-center gap-2 hover:text-green-400 transition-colors duration-300"
-          >
-            <FaMoneyBillWave className="text-green-300" /> Transactions
-          </Link>
-
-          <Link 
-            to="/circular-detection" 
-            className="flex items-center gap-2 hover:text-purple-400 transition-colors duration-300"
-          >
-            <FaSearch className="text-purple-300" /> Circular Detection
-          </Link>
+        {/* Login / Logout */}
+        <div>
+          {username ? (
+            <button
+              onClick={handleLogout}
+              className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-xl text-sm font-medium transition"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl text-sm font-medium transition"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 

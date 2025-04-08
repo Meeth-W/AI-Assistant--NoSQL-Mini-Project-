@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+/* Reset to remove default browser margin/padding */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #0f172a; /* Tailwind gray-900 equivalent */
+}
